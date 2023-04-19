@@ -1,0 +1,17 @@
+<div class="button-section">
+        <a [routerLink]="['/repos']" class="back-btn">
+          <i class='bx bx-left-arrow-alt'></i> Back
+        </a>
+      </div>
+      <div class="content-header">
+        <h1 class="content-title">{{name}}</h1>
+      </div>
+      
+      <div class="content-body" *ngFor="let item of currentRepo">
+          <div class="content">
+            <p>File name: {{item.name}}</p>
+            <p>File size: {{item.size}}(kb)</p>
+            <p>File type: {{item.type}}</p>
+          </div>
+        <div></div>
+      </div>

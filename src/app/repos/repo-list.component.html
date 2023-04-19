@@ -1,0 +1,33 @@
+ <div class="section">
+        <h2 class="repo-page-header">Github Repos</h2>
+        <div class="repo-container">
+        <div class="repo-box" *ngFor="let repo of repoList | paginate: { itemsPerPage: perPage, currentPage: p }">
+          <h3 class="repo-title">{{repo.name}}</h3>
+          <p *ngIf="repo.private; else showThis" class="private">Private</p>
+    <ng-template #showThis>
+        <p class="public">
+            Public
+        </p>     
+    </ng-template>
+          <p class="repo-date">
+            This Repository was created at
+            {{repo.created_at}} by
+            {{repo.owner.login}}
+          </p>
+          <div class="repo-lang">
+            <p *ngIf="repo.language; else showThat">{{repo.language}}</p>
+    <ng-template #showThat >      
+        null
+    </ng-template>
+          </div>
+          <div class="repo-button">
+            <a  [routerLink]="['/repos', repo.name]" class="repo-btn">
+              View Content
+            </a>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="paginate">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

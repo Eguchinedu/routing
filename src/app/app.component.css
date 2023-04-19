@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+
+.nav-link.active {
+    color: #309ad3;
+}
+.bxl-angular {
+    font-size: 50px;
+    cursor: pointer;
+}
+.nav-link {
+    font-weight: bold;
+font-size: 24px;
+color: black;
+}
+.hero {
+    flex-basis: 80%;
+}
+.nav-item {
+    margin:15px 20px;
+}
