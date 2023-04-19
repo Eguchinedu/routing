@@ -10,8 +10,8 @@
         </p>     
     </ng-template>
           <p class="repo-date">
-            This Repository was created at
-            {{repo.created_at}} by
+            This Repository was created on
+            {{repo.created_at | date:'short'}} by
             {{repo.owner.login}}
           </p>
           <div class="repo-lang">
