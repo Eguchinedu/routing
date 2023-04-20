@@ -4,13 +4,22 @@ import { ProfileService } from './profile.service';
 @Component({
   selector: 'cw-git-profile',
   templateUrl: './git-profile.component.html',
-  styleUrls: ['./git-profile.component.css']
+  styleUrls: ['./git-profile.component.css'],
 })
 export class GitProfileComponent implements OnInit {
-profile: any;
-  constructor(private profileService: ProfileService){}
+  profile: any;
+  errorMessage = '';
+
+  constructor(private profileService: ProfileService) {}
   ngOnInit(): void {
-    this.profileService.getProfile().subscribe((data) => {this.profile = data}
-    )
+    this.profileService.getProfile().subscribe({
+      next: (data) => {
+        {
+          
+          this.profile = data;
+        }
+      },
+      error: (err) => (this.errorMessage = err),
+    });
   }
-    }
+}

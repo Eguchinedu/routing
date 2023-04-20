@@ -5,7 +5,9 @@ import { PageNotFoundComponent } from './page-not-found.component';
 
 
 
+
 @NgModule({
+  
   imports: [
     RouterModule.forRoot([
       {path: 'home', component: GitProfileComponent},
